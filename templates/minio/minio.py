@@ -17,7 +17,7 @@ class Minio(TemplateBase):
     def __init__(self, name=None, guid=None, data=None):
         super().__init__(name=name, guid=guid, data=data)
 
-        self.recurring_action('_backup_minio', 30)
+        # self.recurring_action('_backup_minio', 30)
 
     def validate(self):
         for param in ['node', 'zerodbs', 'namespace', 'login', 'password']:
