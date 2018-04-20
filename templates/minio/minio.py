@@ -9,6 +9,9 @@ MINIO_FLIST = 'https://hub.gig.tech/gig-official-apps/minio.flist'
 META_DIR = '/bin/zerostor_meta'
 
 
+REQUIRED_DATA = ['node', 'zerodbs', 'namespace', 'login', 'password', 'resticRepo', 'resticUsername', 'resticPassword']
+
+
 class Minio(TemplateBase):
 
     version = '0.0.1'
@@ -20,7 +23,7 @@ class Minio(TemplateBase):
         # self.recurring_action('_backup_minio', 30)
 
     def validate(self):
-        for param in ['node', 'zerodbs', 'namespace', 'login', 'password']:
+        for param in REQUIRED_DATA:
             if not self.data.get(param):
                 raise ValueError("parameter '%s' not valid: %s" % (param, str(self.data[param])))
 

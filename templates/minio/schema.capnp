@@ -10,9 +10,9 @@ struct Schema {
     password @5: Text; #minio password. End user needs to know this login to have access to minio
     container @6: Text; # reference to the container on which minio will be running. This is set by the template
     listenPort @7: UInt32=9000; # the port to bind to
-    resticRepo @8: Text="s3:http://195.134.212.42/"; # restic repo to use for metadata backup
+    resticRepo @8: Text; # restic repo to use for metadata backup
     resticRepoPassword @9: Text; # restic repo password
-    resticUsername @10: Text="zaibon"; # rustic username
-    resticPassword @11: Text="coucou01"; # rustic password
+    resticUsername @10: Text; # restic username
+    resticPassword @11: Text; # restic password
     privateKey @12: Text; # encryption private key
 }
